@@ -1,9 +1,7 @@
 package com.example.otimizadorprocessador;
 
 import android.support.v7.app.ActionBarActivity;
-
 import android.os.Bundle;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -13,8 +11,6 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 
 	}
-
-	//Nova modificação para fazer um commit
 	
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {

@@ -4,5 +4,12 @@
     <string name="app_name">OtimizadorProcessador</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="voltar">VOLTAR</string>
+    <string name="guide_me">GUIDE ME</string>
+    <string name="passo_um">* CADASTRE seus destinos dando um LONGO CLIQUE sobre o mapa; Em seguida MODIFIQUE os atributos de destino; Quando finalizar clique no botão SUBMETER;</string>
+    <string name="passo_dois">* DEFINA UM PONTO DE PARTIDA clicando uma vez sobre um ponto no mapa;</string>
+    <string name="passo_tres">* DEFINA UM PONTO DE CHEGADA clicando uma vez sobre um outro ponto no mapa;</string>
+    <string name="passo_quatro">* Após definir o ponto de chegada sua rota será calculada e exibida em uma barra de progresso; CLIQUE NO BOTÃO EXECUTAR para iniciar a navegação ou CLIQUE NO BOTÃO SALVAR para salvar a sua rota;</string>
+    <string name="voltar_explica">botao para voltar</string>
 
 </resources>
