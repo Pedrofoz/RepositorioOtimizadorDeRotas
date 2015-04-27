@@ -981,7 +981,7 @@ containing a value of this type.
         public static final int rotas1=0x7f020058;
     }
     public static final class id {
-        public static final int LogOut=0x7f050053;
+        public static final int LogOut=0x7f050059;
         public static final int action_bar=0x7f05001a;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f050019;
@@ -1020,11 +1020,17 @@ containing a value of this type.
         public static final int icon=0x7f050028;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050025;
-        public static final int itemLoginFuncao=0x7f050052;
-        public static final int itemLoginLogin=0x7f05004f;
-        public static final int itemLoginNome=0x7f05004e;
-        public static final int itemLoginPassword=0x7f050050;
-        public static final int itemLoginUltimoLogon=0x7f050051;
+        public static final int itemLoginEmail=0x7f050053;
+        public static final int itemLoginEmailEdit=0x7f050054;
+        public static final int itemLoginFacebook=0x7f050055;
+        public static final int itemLoginFacebookEdit=0x7f050056;
+        public static final int itemLoginIdLogin=0x7f05004e;
+        public static final int itemLoginName=0x7f05004f;
+        public static final int itemLoginNameEdit=0x7f050050;
+        public static final int itemLoginPassword_2=0x7f050051;
+        public static final int itemLoginPassword_2Edit=0x7f050052;
+        public static final int itemLoginRegisterDate=0x7f050057;
+        public static final int itemLoginRegisterDateEdit=0x7f050058;
         public static final int left_icon=0x7f050031;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050027;

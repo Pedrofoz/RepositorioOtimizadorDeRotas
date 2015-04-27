@@ -5,11 +5,11 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/itemLoginNome"
+        android:id="@+id/itemLoginIdLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Nome"
+        android:text="idLogin"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
@@ -17,35 +17,97 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/itemLoginLogin"
+            android:id="@+id/itemLoginName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="Login:#### "
+            android:text="Name: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/itemLoginPassword"
+            android:id="@+id/itemLoginNameEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="#####"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/itemLoginPassword_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="Password: ****"
+            android:text="     Password: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/itemLoginPassword_2Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="****"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/itemLoginUltimoLogon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ultimo Logon"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/itemLoginFuncao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Função: ++++"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        <TextView
+            android:id="@+id/itemLoginEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/itemLoginEmailEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#####"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/itemLoginFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facebook: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/itemLoginFacebookEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="########"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/itemLoginRegisterDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RegisterDate: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/itemLoginRegisterDateEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yyyy-MM-dd HH:mm:ss"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
 
 </LinearLayout>

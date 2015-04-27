@@ -1,5 +1,9 @@
 package com.example.otimizador;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -39,33 +43,38 @@ public class LoginScreen extends Activity {
 			DBHelperLogin dbHelper = new DBHelperLogin(getApplicationContext());
 			SQLiteDatabase db = dbHelper.getWritableDatabase();
 			Cursor c = db.query("login_valido", 
-					   new String[]{"_id","login","password","nome","funcao","ultimo_logon"},
-					   "login=?",new String[]{s}, null, null, null);
+					   new String[]{"idLogin","name","email","password_2","facebook","registerDate"},
+					   "name=?",new String[]{s}, null, null, null);
 			if (c.getCount() > 0)
 			{
 				c.moveToFirst();
-				log1.setId(c.getLong(0));
-				log1.setLogin(c.getString(1));
-				log1.setPassword(c.getString(2));
-				log1.setNome(c.getString(3));
-				log1.setFuncao(c.getString(4));
-				log1.setUltimoLogon(c.getString(5));
+				log1.setIdLogin(c.getLong(0));
+				log1.setName(c.getString(1));
+				log1.setEmail(c.getString(2));
+				log1.setPassword_2(c.getString(3));
+				log1.setFacebook(c.getInt(4));
+				log1.setRegisterDate(c.getString(5));
 			}
 			else
 			{
 				log1 = new Login();
-				log1.setLogin(s);
-				log1.setPassword("1234");
-				log1.setNome(s);
-				log1.setFuncao("Programacao");
-				log1.setUltimoLogon("Hoje");
+				log1.setName(s);
+				log1.setEmail("user@robotica.com");
+				log1.setPassword_2("1234");
+				log1.setFacebook(1231546);
+
+			        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+			        Date date = new Date();
+
+				log1.setRegisterDate(dateFormat.format(date));
 				// Instancia o DAO para persistir o objeto
 				LoginDAO mdao = new LoginDAO(getApplicationContext());
 				// Salva o objeto no banco de dados
 				mdao.salva(log1);
+				Toast.makeText(getApplicationContext(), "Login Salvo! "+log1.getIdLogin(), Toast.LENGTH_SHORT).show();
 			}
 			c.close();
-	      if(username.getText().toString().equals(log1.getLogin()) && password.getText().toString().equals(log1.getPassword()))
+	      if(username.getText().toString().equals(log1.getName()) && password.getText().toString().equals(log1.getPassword_2()))
 	      {
 	    	  Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
 	      }	

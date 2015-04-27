@@ -21,9 +21,9 @@ public class DBHelperLogin extends SQLiteOpenHelper
 	@Override
 	public void onCreate(SQLiteDatabase db) 
 	{
-		String sql = "CREATE TABLE login_valido ("+"_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"+",login TEXT NOT NULL"+
-					 ",password TEXT NOT NULL"+",nome TEXT NOT NULL"+",funcao TEXT NOT NULL"+",ultimo_logon TEXT NOT NULL"+");";
-		db.execSQL(sql);
+		String sql = "CREATE TABLE login_valido ("+"idLogin INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT"+",name TEXT NOT NULL"+
+				 ",email TEXT NOT NULL"+",password_2 TEXT NOT NULL"+",facebook INTEGER NOT NULL"+",registerDate TEXT NOT NULL"+");";
+	db.execSQL(sql);
 	}
 	/**
 	* Atualiza a estrutura da tabela no banco de dados, caso sua versão tenha mudado.

@@ -57,24 +57,27 @@ public class ListaLoginAdapter extends ArrayAdapter<Login>
 		* Injeta o valor do campo referente ao nome do objeto emprestado, do 
 		* registro consultado no banco de dados, na TextView de ID "item_objeto_emprestado_nome".
 		*/
-		TextView nome = (TextView) view.findViewById(R.id.itemLoginNome);
-		nome.setText(material.getNome().toString());
+		TextView idLogin = (TextView) view.findViewById(R.id.itemLoginIdLogin);
+		idLogin.setText(material.getIdLogin().toString());
 		/**
 		* Injeta o valor do campo referente ao nome da pessoa para quem o 
 		* objeto foi emprestado, do registro consultado no banco de dados, na TextView 
 		* de ID "item_objeto_emprestado_pessoa".
 		*/
-		TextView password = (TextView) view.findViewById(R.id.itemLoginPassword);
-		password.setText("Password: "+material.getPassword().toString());
+		TextView name = (TextView) view.findViewById(R.id.itemLoginNameEdit);
+		name.setText(material.getName().toString());
 		
-		TextView login = (TextView) view.findViewById(R.id.itemLoginLogin);
-		login.setText("LOGIN: "+material.getLogin().toString());
+		TextView password_2 = (TextView) view.findViewById(R.id.itemLoginPassword_2Edit);
+		password_2.setText(material.getPassword_2().toString());
 		
-		TextView ultimoLogon = (TextView) view.findViewById(R.id.itemLoginUltimoLogon);
-		ultimoLogon.setText("Último Logon: "+material.getUltimoLogon().toString());
+		TextView email = (TextView) view.findViewById(R.id.itemLoginEmailEdit);
+		email.setText(material.getEmail().toString());
 		
-		TextView funcao = (TextView) view.findViewById(R.id.itemLoginFuncao);
-		funcao.setText("Função: "+material.getFuncao().toString());
+		TextView facebook = (TextView) view.findViewById(R.id.itemLoginFacebookEdit);
+		facebook.setText(Integer.toString(material.getFacebook()));
+		
+		TextView registerDate = (TextView) view.findViewById(R.id.itemLoginRegisterDateEdit);
+		registerDate.setText(material.getRegisterDate().toString());
 		
 		// Retorna a View já adaptada para ser apresentada na ListView
 		return view;
@@ -86,7 +89,7 @@ public class ListaLoginAdapter extends ArrayAdapter<Login>
 	@Override
 	public long getItemId(int position) 
 	{
-		return materiais.get(position).getId();
+		return materiais.get(position).getIdLogin();
 	}
 	/**
 	* Retorna o número de itens que serão mostrados na ListView.

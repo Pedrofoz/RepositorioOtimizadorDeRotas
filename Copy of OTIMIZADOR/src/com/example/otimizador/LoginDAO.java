@@ -24,16 +24,16 @@ public class LoginDAO
 	{
 		// Encapsula no objeto do tipo ContentValues os valores a serem persistidos no banco de dados
 		ContentValues values = new ContentValues();
-		values.put("login", objeto.getLogin());
-		values.put("password", objeto.getPassword());
-		values.put("nome", objeto.getNome());
-		values.put("funcao", objeto.getFuncao());
-		values.put("ultimo_logon", objeto.getUltimoLogon());
+		values.put("name", objeto.getName());
+		values.put("email", objeto.getEmail());
+		values.put("password_2", objeto.getPassword_2());
+		values.put("facebook", objeto.getFacebook());
+		values.put("registerDate", objeto.getRegisterDate());
 		// Instancia uma conexão com o banco de dados, em modo de gravação
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 		// Insere o registro no banco de dados
 		long id = db.insert("login_valido", null, values);
-		objeto.setId(id);
+		objeto.setIdLogin(id);
 		// Encerra a conexão com o banco de dados
 		db.close();
 	}
@@ -48,7 +48,7 @@ public class LoginDAO
 	// Instancia uma nova conexão com o banco de dados em modo leitura
 		SQLiteDatabase db = dbHelper.getReadableDatabase();
 	// Executa a consulta no banco de dados
-		Cursor c = db.query("login_valido", null, null, null, null, null, "nome ASC");
+		Cursor c = db.query("login_valido", null, null, null, null, null, "name ASC");
 	/**
 	* Percorre o Cursor, injetando os dados consultados em um objeto 
 	* do tipo ObjetoEmprestado e adicionando-os na List
@@ -57,12 +57,12 @@ public class LoginDAO
 			while(c.moveToNext())
 			{
 				Login objeto = new Login();
-				objeto.setId(c.getLong(c.getColumnIndex("_id")));
-				objeto.setLogin(c.getString(c.getColumnIndex("login")));
-				objeto.setPassword(c.getString(c.getColumnIndex("password")));
-				objeto.setNome(c.getString(c.getColumnIndex("nome")));
-				objeto.setFuncao(c.getString(c.getColumnIndex("funcao")));
-				objeto.setUltimoLogon(c.getString(c.getColumnIndex("ultimo_logon")));
+				objeto.setIdLogin(c.getLong(c.getColumnIndex("idLogin")));
+				objeto.setName(c.getString(c.getColumnIndex("name")));
+				objeto.setEmail(c.getString(c.getColumnIndex("email")));
+				objeto.setPassword_2(c.getString(c.getColumnIndex("password_2")));
+				objeto.setFacebook(c.getInt(c.getColumnIndex("facebook")));
+				objeto.setRegisterDate(c.getString(c.getColumnIndex("registerDate")));
 				objetos.add(objeto);
 			}
 			} finally
@@ -82,15 +82,15 @@ public class LoginDAO
 	{
 		// Encapsula no objeto do tipo ContentValues os valores a serem atualizados no banco de dados
 		ContentValues values = new ContentValues();
-		values.put("login", objeto.getLogin());
-		values.put("password", objeto.getPassword());
-		values.put("nome", objeto.getNome());
-		values.put("funcao", objeto.getFuncao());
-		values.put("ultimo_logon", objeto.getUltimoLogon());
+		values.put("name", objeto.getName());
+		values.put("email", objeto.getEmail());
+		values.put("password_2", objeto.getPassword_2());
+		values.put("facebook", objeto.getFacebook());
+		values.put("registerDate", objeto.getRegisterDate());
 		// Instancia uma conexão com o banco de dados, em modo de gravação
 		SQLiteDatabase db = dbHelper. getWritableDatabase();
 		// Atualiza o registro no banco de dados
-		db.update("login_valido", values, "_id=?", new String[] { objeto.getId().toString() });
+		db.update("login_valido", values, "idLogin=?", new String[] { objeto.getIdLogin().toString() });
 		// Encerra a conexão com o banco de dados
 		db.close();
 	}
@@ -109,7 +109,7 @@ public class LoginDAO
 		* logo subentende-se que queremos adicionar o objeto no banco de dados.
 		* Sendo assim, chamaremos o método adiciona()já definido no DAO.
 		*/
-		if(objeto.getId() == null) 
+		if(objeto.getIdLogin() == null) 
 		{
 			adiciona(objeto);
 		/**
@@ -131,7 +131,7 @@ public class LoginDAO
 		// Instancia uma conexão com o banco de dados, em modo de gravação
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 		// Remove o registro no banco de dados
-		db.delete("login_valido", "_id=?", new String[] { objeto.getId().toString() });
+		db.delete("login_valido", "idLogin=?", new String[] { objeto.getIdLogin().toString() });
 		// Encerra a conexão com o banco de dados
 		db.close();
 	}

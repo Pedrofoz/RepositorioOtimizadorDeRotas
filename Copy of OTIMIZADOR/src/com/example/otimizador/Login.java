@@ -1,64 +1,74 @@
 package com.example.otimizador;
 
 import java.io.Serializable;
+import java.security.Timestamp;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
+//import java.util.Locale;
 
 
 public class Login implements Serializable
 {
 	private static final long serialVersionUID= 1L;
-	private Long id;
-	private String login;
-	private String password;
-	private String nome;
-	private String funcao;
-	private String ultimoLogon;
+	private Long idLogin;
+	private String name;
+	private String email;
+	private String password_2;
+	private int facebook;
+	private String registerDate;
 
-	public String getLogin() 
+	public String getName() 
 	{
-		return login;
+		return name;
 	}
-	public void setLogin(String login)
+	public void setName(String login)
 	{
-		this.login = login;
+		this.name = login;
 	}
-	public String getPassword() 
+	public String getEmail() 
 	{
-		return password;
+		return email;
 	}
-	public void setPassword(String password) 
+	public void setEmail(String password) 
 	{
-		this.password = password;
+		this.email = password;
 	}
-	public String getNome() 
+	public String getPassword_2() 
 	{
-		return nome;
+		return password_2;
 	}
-	public void setNome(String nome) 
+	public void setPassword_2(String nome) 
 	{
-		this.nome = nome;
+		this.password_2 = nome;
 	}
-	public String getFuncao() 
+	public int getFacebook() 
 	{
-		return funcao;
+		return facebook;
 	}
-	public void setFuncao(String funcao)
+	public void setFacebook(int funcao)
 	{
-		this.funcao = funcao;
+		this.facebook = funcao;
 	}
-	public String getUltimoLogon() 
+	public String getRegisterDate() 
 	{
-		return ultimoLogon;
+		return registerDate;
 	}
-	public void setUltimoLogon(String ultimoLogon) 
+//			private String getDateTime() 
+//			{
+//		        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+//		        Date date = new Date();
+//		        return dateFormat.format(date);
+//			}
+	public void setRegisterDate(String ultimoLogon) 
 	{
-		this.ultimoLogon = ultimoLogon;
+		this.registerDate = ultimoLogon;
 	}
-	public Long getId() 
+	public Long getIdLogin() 
 	{
-		return id;
+		return idLogin;
 	}
-	public void setId(Long id) 
+	public void setIdLogin(Long id) 
 	{
-		this.id= id;
+		this.idLogin = id;
 	}
 }
